@@ -1,0 +1,14 @@
+sequenceDiagram
+    Participant User as User
+    Participant Browser as Browser
+    Participant Server as Server
+    User->>Browser: Navigates to https://studies.cs.helsinki.fi/exampleapp/spa
+    Browser->>Server: Sends a GET request to /spa
+    Server->>Browser: Responds with a 200 status code and the HTML for the /spa page
+    Browser->>User: Displays the /spa page
+    User->>Browser: Writes something in the text field
+    User->>Browser: Clicks the Save button
+    Browser->>Server: Sends a POST request to /api/notes with the note data
+    Server->>Server: Processes the request, saves the note in the database
+    Server->>Browser: Responds with a 200 status code and the JSON for the new note
+    Browser->>User: Updates the /spa page with the new note added

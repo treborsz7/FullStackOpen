@@ -1,0 +1,14 @@
+sequenceDiagram
+    Participant User as User
+    Participant Browser as Browser
+    Participant Server as Server
+    User->>Browser: Writes something in the text field
+    User->>Browser: Clicks the Save button
+    Browser->>Server: Sends a POST request with the note data
+    Server->>Server: Processes the request, saves the note in the database
+    Server->>Browser: Responds with a 302 status code and redirects to /notes
+    Browser->>Server: Sends a GET request to /notes
+    Server->>Server: Retrieves all notes from the database
+    Server->>Browser: Responds with a 200 status code and the HTML for the /notes page with all notes
+    Browser->>User: Displays the /notes page with the new note added
+
