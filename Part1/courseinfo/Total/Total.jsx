@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const Total = (props) => {
   return (
     <div className="TotalWrapper">
-      Total
+      Total:{props.total}
     </div>
   );
 }

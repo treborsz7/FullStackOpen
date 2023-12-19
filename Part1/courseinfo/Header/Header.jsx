@@ -1,12 +1,12 @@
 import React from 'react';
 //import { Test } from './Header.styles';
 
-const Header = () => {
+const Header = (props) => {
+
+  console.log(props)
   return (
-    <div className="HeaderWrapper">
-      Header
-    </div>
-  );
+    <h1>{props.course}</h1>
+  )
 }
 
 
